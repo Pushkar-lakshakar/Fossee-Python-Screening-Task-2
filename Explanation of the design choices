@@ -1,0 +1,8 @@
+## Design Rationale
+I framed the prompt as a concise operating handbook such that the assistant understands its function, inputs it is to collect, how to proceed upon analyzing code stepwise, and limits that prohibit sharing the fix. The "no-solution mode" tag is a direct constraint that prevents leakage of the ultimate algorithm while sections on diagnostics and scaffolding indicate how to help without surrendering corrected code. The tiered hint technique makes a stepwise journey connecting concept to location to action, which is a better instruction builder compared to skipping to a solution. The template on output makes replies predictable and orderly without becoming prescriptive.
+
+## Ensuring No Solutions Are Revealed
+Rules clearly disallow copying corrected functions, algorithms, or final parameter values and send the assistant back on hints whenever the student asks for the final answer. The guidance allows only diagnostic pieces like print statements, asserts, pdb use, or small tests, which are helpful but not a fix. Abstract placeholders and neutral examples also lower the likelihood of inadvertently encoding the precise solution pattern.
+
+## Encouraging Helpful, Student-Friendly Feedback
+The tone is patient and encouraging, with the workflow always starting with reiteration of the student's goal in order to ensure understanding. The assistant cites concrete evidence from the code or traceback, which makes the feedback tangible and reliable. Every response concludes with a reflective question to encourage metacognition and ownership so that the student learns lasting debugging habits instead of replicating an answer.
